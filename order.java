@@ -11,18 +11,33 @@ import java.io.Serializable;
 public class Order implement Serializable {
 
   private OrderItem[] orderItems;
-  
+
   public Order(OrderItem[]orderItems)  {
-    this. orderItems = orderItems;
+    this.orderItems = orderItems;
   }
 
   // Returns the total order cost after the tax has been applied
   public float getOrderTotal(float taxRate)  {
-    return 0; // implement this method
+    int size = orderItems.length();
+    int orderTotal = 0;
+
+    for(i = 0; i < size; i++) {
+      if(orderItem[i].orderType = "material") {
+        orderItem[i].price = orderItem[i].price * taxRate;
+      }
+      orderTotal += orderItem[i].price
+    }
+    return orderTotal; // implement this method
   }
 
   //Returns a Collection of all items sorted by item name (case-insensitive).
   public Collection getItems()  {
-    return null; // implement this method
+    int size = orderItems.length();
+    List<String> list = new ArrayList<String>;
+
+    for(i = 0; i < size; i++) {
+      list.add(orderItems[i].name);
+    }
+    return Collections.sort(list); // implement this method
   }
 }
