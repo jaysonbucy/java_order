@@ -16,4 +16,10 @@ This is a very simple coding example, no complicated algorithms. Our intent is t
 
  ## My Solution:
  1. Given
- 2. I thought the easiest way to handle this was to add a ```java private String orderType;``` to the class. This enables us to check versus "service" or "material" string to know whether or not to add tax.
+ 2. I thought the easiest way to handle this was to add a ```private String orderType;``` to the class.
+ 3. With number 2 handled this lets us apply ```taxRate``` to the price of the item.
+ 4. Nothing really at this point to handle that I'm aware of.
+ 5. Set the class to ```final``` and did not use any ```setters``` which should render any orders immutable.
+ 6. Set the class to Serializable and imported the library
+ 7. I changed the type to ```BigDecimal``` which provides operations for rounding and is more accurate (or so I was instructed by the Java guru that taught me).
+ 8. This is bad programming practice. Don't ever code for expected cases. Do not write code that will not be used for a long time. It will be useless as the use case is to subject to change. Make the code robust against unexpected problems or fail-fast, but do not write code for possible future uses.

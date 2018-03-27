@@ -8,7 +8,7 @@ package com.exam;
 import java.util.*;
 import java.io.Serializable;
 
-public class Order implement Serializable {
+public final class Order implement Serializable {
 
   private OrderItem[] orderItems;
 
@@ -17,15 +17,15 @@ public class Order implement Serializable {
   }
 
   // Returns the total order cost after the tax has been applied
-  public float getOrderTotal(float taxRate)  {
+  public BigDecimal getOrderTotal(float taxRate)  {
     int size = orderItems.length();
-    int orderTotal = 0;
+    BigDecimal orderTotal = 0;
 
     for(i = 0; i < size; i++) {
       if(orderItem[i].orderType = "material") {
         orderItem[i].price += orderItem[i].price * taxRate;
       }
-      orderTotal += orderItem[i].price
+      orderTotal += orderItem[i].price.setScale(2, RoundingMode.UP);
     }
     return orderTotal; // implement this method
   }
