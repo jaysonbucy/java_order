@@ -23,7 +23,7 @@ public class Order implement Serializable {
 
     for(i = 0; i < size; i++) {
       if(orderItem[i].orderType = "material") {
-        orderItem[i].price = orderItem[i].price * taxRate;
+        orderItem[i].price += orderItem[i].price * taxRate;
       }
       orderTotal += orderItem[i].price
     }

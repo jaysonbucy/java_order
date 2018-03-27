@@ -15,3 +15,5 @@ This is a very simple coding example, no complicated algorithms. Our intent is t
  10. This API will be used by many developers so implement all common methods.
 
  ## My Solution:
+ 1. Given
+ 2. I thought the easiest way to handle this was to add a ```java private String orderType;``` to the class. This enables us to check versus "service" or "material" string to know whether or not to add tax.
